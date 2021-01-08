@@ -16,12 +16,13 @@ public class UserRepository {
     }
 
     public User save(User user) {
-        try (Session session = sessionFactory.openSession()) {
+            Session session = sessionFactory.openSession();
             session.save(user);
             Role role = new Role(ROLE_USER);
             role.setUser(user);
             session.saveOrUpdate(role);
             return user;
-        }
     }
 }
+
+

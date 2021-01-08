@@ -15,7 +15,7 @@ public class WebInit implements WebApplicationInitializer {
 
     public void onStartup(ServletContext container) {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(AppConfig.class, DataConfig.class, SecurityConfig.class);
+        rootContext.register (AppConfig.class, DataConfig.class, SecurityConfig.class);
         container.addListener(new ContextLoaderListener(rootContext));
         rootContext.refresh();
         DispatcherServlet servlet = new DispatcherServlet(rootContext);

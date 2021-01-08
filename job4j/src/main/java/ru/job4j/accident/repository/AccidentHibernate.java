@@ -1,5 +1,6 @@
 package ru.job4j.accident.repository;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -16,15 +17,10 @@ public class AccidentHibernate {
     }
 
     public Accident save(Accident accident) {
-        try (Session session = sessionFactory.openSession()) {
+            Session session = sessionFactory.openSession ();
             session.save(accident);
             return accident;
-        }
+
     }
 
-    public List<Accident> getAll() {
-        try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("from Accident", Accident.class).list();
-        }
-    }
 }

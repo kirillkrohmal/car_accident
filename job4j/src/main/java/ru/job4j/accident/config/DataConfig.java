@@ -21,7 +21,6 @@ import javax.sql.DataSource;
 @EnableJpaRepositories("ru.job4j.accident.repository")
 @EnableTransactionManagement
 public class DataConfig {
-
     @Bean
     public DataSource ds(@Value("${jdbc.driver}") String driver,
                          @Value("${jdbc.url}") String url,
